@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">TP</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+        <a href="/about" class="nav-link"><i class="fas fa-user"></i> À propos</a>
+        <a href="/blog" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://github.com/{{ site.github_username }}" class="footer-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://twitter.com/{{ site.twitter_username }}" class="footer-link">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="mailto:{{ site.email }}" class="footer-link">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+      <p class="footer-text">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animation du menu au scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.main-nav');
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll <= 0) {
+        nav.classList.remove('scroll-up');
+        return;
+      }
+      
+      if (currentScroll > lastScroll && !nav.classList.contains('scroll-down')) {
+        nav.classList.remove('scroll-up');
+        nav.classList.add('scroll-down');
+      } else if (currentScroll < lastScroll && nav.classList.contains('scroll-down')) {
+        nav.classList.remove('scroll-down');
+        nav.classList.add('scroll-up');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html> 
