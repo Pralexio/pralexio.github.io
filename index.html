@@ -51,27 +51,11 @@
                     <p>Passionné par le développement web et mobile, je recherche une opportunité pour mettre en pratique mes compétences acquises en autodidacte.</p>
                     <div class="hero-cta">
                         <a href="#contact" class="cta-button">Me contacter <i class="fas fa-arrow-right"></i></a>
-                        <a href="#" class="cta-button secondary" id="view-cv-btn">Voir mon CV <i class="fas fa-eye"></i></a>
+                        <a href="https://raw.githubusercontent.com/Pralexio/pralexio.github.io/main/Assets/CV.pdf" class="cta-button secondary" target="_blank">Voir mon CV <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- CV Popup -->
-        <div class="cv-popup" id="cv-popup">
-            <div class="cv-popup-content">
-                <div class="cv-popup-header">
-                    <h3>Mon CV</h3>
-                    <button class="cv-popup-close" id="cv-popup-close">&times;</button>
-                </div>
-                <div class="cv-popup-body">
-                    <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/Pralexio/pralexio.github.io/main/Assets/CV.pdf&embedded=true" frameborder="0"></iframe>
-                </div>
-                <div class="cv-popup-footer">
-                    <a href="https://raw.githubusercontent.com/Pralexio/pralexio.github.io/main/Assets/CV.pdf" class="cta-button" download>Télécharger <i class="fas fa-download"></i></a>
-                </div>
-            </div>
-        </div>
 
         <section id="about">
             <div class="container">
@@ -287,10 +271,6 @@
                 
                 // S'assurer que le corps de la page peut défiler
                 document.body.style.overflow = '';
-                
-                // S'assurer que la popup CV est bien cachée
-                const cvPopup = document.getElementById('cv-popup');
-                cvPopup.classList.remove('active');
             }, 1500); // Attendre 1.5 secondes avant de cacher l'écran de chargement
         });
         
@@ -377,38 +357,6 @@
                     }
                 });
             });
-            
-            // CV Popup - version simplifiée
-            const viewCvBtn = document.getElementById('view-cv-btn');
-            const cvPopup = document.getElementById('cv-popup');
-            const cvPopupClose = document.getElementById('cv-popup-close');
-            
-            viewCvBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                cvPopup.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            cvPopupClose.addEventListener('click', function() {
-                closePopup();
-            });
-            
-            cvPopup.addEventListener('click', function(e) {
-                if (e.target === cvPopup) {
-                    closePopup();
-                }
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && cvPopup.classList.contains('active')) {
-                    closePopup();
-                }
-            });
-            
-            function closePopup() {
-                cvPopup.classList.remove('active');
-                document.body.style.overflow = '';
-            }
         });
     </script>
 </body>
