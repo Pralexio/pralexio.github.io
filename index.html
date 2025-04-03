@@ -1,16 +1,415 @@
----
-layout: default
-title: "Accueil"
----
-
-<div class="hero">
-    <div class="hero-content">
-        <h1 class="glitch" data-text="Thibault PERNEL">Thibault PERNEL</h1>
-        <p class="hero-subtitle">Développeur Full Stack</p>
-        <div class="hero-links">
-            <a href="https://github.com/Pralexio" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/thibault-pernel-b74955357/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="/contact" class="social-link"><i class="fas fa-envelope"></i></a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Thibault Pernel - Développeur autodidacte, à la recherche d'une opportunité professionnelle">
+    <meta name="keywords" content="développeur, autodidacte, web, portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Thibault Pernel">
+    <title>Thibault Pernel | Portfolio Développeur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+</head>
+<body>
+    <!-- Écran de chargement -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Chargement...</p>
         </div>
     </div>
-</div> 
+    
+    <header>
+        <div class="container header-container">
+            <div class="logo">Thibault Pernel</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Thibault Pernel</h1>
+                    <p class="subtitle">Développeur autodidacte</p>
+                    <p>Passionné par le développement web et mobile, je recherche une opportunité pour mettre en pratique mes compétences acquises en autodidacte.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="cta-button">Me contacter <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="cta-button secondary" id="view-cv-btn">Voir mon CV <i class="fas fa-eye"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Popup -->
+        <div class="cv-popup" id="cv-popup">
+            <div class="cv-popup-content">
+                <div class="cv-popup-header">
+                    <h3>Mon CV</h3>
+                    <button class="cv-popup-close" id="cv-popup-close">&times;</button>
+                </div>
+                <div class="cv-popup-body">
+                    <iframe src="Assets/cv.pdf" frameborder="0"></iframe>
+                </div>
+                <div class="cv-popup-footer">
+                    <a href="Assets/cv.pdf" class="cta-button" download>Télécharger <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="animate">À propos de moi</h2>
+                <div class="about-content-full animate animate-delay-200">
+                    <p>Bonjour, je suis Thibault Pernel. Passionné par les technologies web, j'ai décidé de me former en autodidacte au développement web et mobile.</p>
+                    <p>J'apprends constamment de nouvelles technologies et j'aime relever des défis techniques. Ma curiosité et ma persévérance me permettent de progresser et d'acquérir de nouvelles compétences de façon autonome.</p>
+                    <p>Je cherche maintenant à mettre en pratique ces connaissances dans un contexte professionnel où je pourrai continuer à développer mes compétences et contribuer à des projets concrets.</p>
+                    <div class="skills-container">
+                        <div class="tech-interests animate animate-delay-400">
+                            <h3>Technologies maîtrisées</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">GitHub</span>
+                            </div>
+                        </div>
+                        <div class="tech-interests animate animate-delay-600">
+                            <h3>Compétences transversales</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Autonomie</span>
+                                <span class="tech-tag">Résolution de problèmes</span>
+                                <span class="tech-tag">Veille technologique</span>
+                                <span class="tech-tag">Adaptation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-bg">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+PHBhdHRlcm4gaWQ9InBhdHRlcm4iIHg9IjAiIHk9IjAiIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzZjNjNmZiIvPjwvcGF0dGVybj48L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz4KPC9zdmc+" alt="background pattern">
+            </div>
+        </section>
+
+        <section id="parcours">
+            <div class="container">
+                <h2 class="animate">Mon parcours</h2>
+                <div class="timeline">
+                    <div class="timeline-item animate">
+                        <div class="timeline-date">
+                            <span>Actuellement</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Développement autodidacte</h3>
+                            <p>Apprentissage continu des technologies web de façon autonome, à travers des ressources en ligne, des projets personnels et des exercices pratiques.</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate animate-delay-200">
+                        <div class="timeline-date">
+                            <span>Projets</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Réalisations personnelles</h3>
+                            <p>Développement de projets personnels pour mettre en pratique les compétences acquises, notamment BubbleReader, une application de lecture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item animate animate-delay-400">
+                        <div class="timeline-date">
+                            <span>Ressources</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Sources d'apprentissage</h3>
+                            <ul class="certification-list">
+                                <li>Documentation officielle et tutoriels en ligne</li>
+                                <li>Exercices pratiques et projets personnels</li>
+                                <li>Veille technologique et forums de développeurs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="animate">Mes projets</h2>
+                <div class="projects-grid">
+                    <div class="project-card animate">
+                        <div class="project-image">
+                            <img src="https://raw.githubusercontent.com/Pralexio/BubbleReader/main/assets/screen_1.png" alt="BubbleReader">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">BubbleReader</h3>
+                            <p>Application de lecture développée pour faciliter la navigation et la sauvegarde de la progression de lecture via un compte personnel. Ce projet m'a permis de mettre en pratique mes connaissances en développement d'interface utilisateur ainsi que mes compétences en JavaScript/HTML/CSS ainsi que MangoDB.</p>
+                            <p><strong>Fonctionnalités :</strong> Interface intuitive, navigation fluide, organisation des contenus.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Pralexio/BubbleReader" target="_blank" class="cta-button">Voir le code <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-bg">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBmaWxsPSIjZWM0ODk5IiBvcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIxMCIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMDAiIHI9IjEwIi8+CjxjaXJjbGUgY3g9IjUwMCIgY3k9IjEwMCIgcj0iMTAiLz4KPGNpcmNsZSBjeD0iNzAwIiBjeT0iMTAwIiByPSIxMCIvPgo8Y2lyY2xlIGN4PSI5MDAiIGN5PSIxMDAiIHI9IjEwIi8+Cgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjEwIi8+CjxjaXJjbGUgY3g9IjQwMCIgY3k9IjIwMCIgcj0iMTAiLz4KPGNpcmNsZSBjeD0iNjAwIiBjeT0iMjAwIiByPSIxMCIvPgo8Y2lyY2xlIGN4PSI4MDAiIGN5PSIyMDAiIHI9IjEwIi8+CjxjaXJjbGUgY3g9IjEwMDAiIGN5PSIyMDAiIHI9IjEwIi8+CgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjMwMCIgcj0iMTAiLz4KPGNpcmNsZSBjeD0iMzAwIiBjeT0iMzAwIiByPSIxMCIvPgo8Y2lyY2xlIGN4PSI1MDAiIGN5PSIzMDAiIHI9IjEwIi8+CjxjaXJjbGUgY3g9IjcwMCIgY3k9IjMwMCIgcj0iMTAiLz4KPGNpcmNsZSBjeD0iOTAwIiBjeT0iMzAwIiByPSIxMCIvPgoKPC9nPgo8L3N2Zz4=" alt="background pattern">
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="animate">Me contacter</h2>
+                <p class="text-center animate animate-delay-200">Je suis actuellement à la recherche d'opportunités professionnelles. N'hésitez pas à me contacter pour discuter.</p>
+                
+                <div class="contact-container animate animate-delay-300">
+                    <div class="contact-info-card">
+                        <div class="contact-info-item">
+                            <div class="contact-icon-circle">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><a href="mailto:thibaultpernel@gmail.com">thibaultpernel@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-circle">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Téléphone</h3>
+                                <p><a href="tel:+33613467280">+33 6 13 46 72 80</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon-circle">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Localisation</h3>
+                                <p>France</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item" style="border-bottom: none;">
+                            <div class="contact-details" style="width: 100%;">
+                                <h3>Me suivre</h3>
+                                <div class="social-links-horizontal">
+                                    <a href="https://github.com/Pralexio" target="_blank" class="social-circle" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/thibault-pernel-b74955357/" target="_blank" class="social-circle" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-simple">
+                        <form action="https://formspree.io/f/xoqgbkoz" method="POST">
+                            <div class="form-row">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Votre email" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+                            </div>
+                            <button type="submit" class="simple-button">Envoyer <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Pralexio" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/thibault-pernel-b74955357/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:thibaultpernel@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Thibault Pernel - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <a href="#home" class="scroll-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Gestion de l'écran de chargement
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.classList.add('hidden');
+                
+                // S'assurer que le corps de la page peut défiler
+                document.body.style.overflow = '';
+                
+                // S'assurer que la popup CV est bien cachée
+                const cvPopup = document.getElementById('cv-popup');
+                cvPopup.classList.remove('active');
+            }, 1500); // Attendre 1.5 secondes avant de cacher l'écran de chargement
+        });
+        
+        // Script pour le menu hamburger responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            // Fermer le menu lorsqu'un lien est cliqué
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+
+            // Animation au défilement
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Menu actif au défilement
+            const sections = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Scroll to top button
+                const scrollTop = document.querySelector('.scroll-top');
+                if (scrollY > 300) {
+                    scrollTop.classList.add('active');
+                } else {
+                    scrollTop.classList.remove('active');
+                }
+
+                // Header effect
+                const header = document.querySelector('header');
+                if (scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // CV Popup - version simplifiée
+            const viewCvBtn = document.getElementById('view-cv-btn');
+            const cvPopup = document.getElementById('cv-popup');
+            const cvPopupClose = document.getElementById('cv-popup-close');
+            
+            viewCvBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                cvPopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            cvPopupClose.addEventListener('click', function() {
+                closePopup();
+            });
+            
+            cvPopup.addEventListener('click', function(e) {
+                if (e.target === cvPopup) {
+                    closePopup();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && cvPopup.classList.contains('active')) {
+                    closePopup();
+                }
+            });
+            
+            function closePopup() {
+                cvPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html> 
