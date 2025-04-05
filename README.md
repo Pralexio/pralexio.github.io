@@ -11,10 +11,3 @@ Un site portfolio personnel créé avec GitHub Pages.
 ## Déploiement
 
 Ce site est déployé automatiquement via GitHub Pages à partir de la branche principale.
-
-## Comment l'utiliser
-
-1. Clonez ce dépôt
-2. Modifiez les fichiers selon vos besoins
-3. Poussez vos modifications sur GitHub
-4. Votre site sera automatiquement déployé sur GitHub Pages
